@@ -1,0 +1,39 @@
+id: com.google.Chrome.nssdb.libeToken
+branch: '1.0'
+runtime: com.google.Chrome
+# runtime-version: 'stable'
+sdk: org.freedesktop.Sdk//24.08
+build-extension: true
+separate-locales: false
+build-options:
+  prefix: /app/nssdb/libeToken
+modules:
+  - name: libeToken
+    sources:
+      - type: file
+        url: https://nullroute.lt/tmp/2023/pkg/SAC_Linux_10.8.105_R1_GA.zip
+        sha256: 18ecac33e8a1ddb894c23423074592ffd77a272a7255b519d20992662a5c699e
+        dest-filename: sac_linux.zip
+        dest: temp/
+
+      - type: shell
+        commands:
+          - unzip -j temp/sac_linux.zip 'SAC Linux 10.8.1050 R1 GA/Installation/withoutUI/Ubuntu-2204/safenetauthenticationclient-core_10.8.1050_amd64.deb' -d temp/
+          - ar x temp/safenetauthenticationclient-core_10.8.1050_amd64.deb data.tar.gz --output temp/
+          - tar xf temp/data.tar.gz
+    
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 --target ${FLATPAK_DEST} usr/lib/libeToken.so.10.8.1050
+      - ln -s ${FLATPAK_DEST}/libeToken.so.10.8.1050 ${FLATPAK_DEST}/libeToken.so.10
+      - ln -s ${FLATPAK_DEST}/libeToken.so.10.8.1050 ${FLATPAK_DEST}/libeToken.so
+      - echo "module:${FLATPAK_DEST}/libeToken.so" > libeToken.module
+      - install -Dm644 libeToken.module --target ${FLATPAK_DEST}
+      - install -Dm644 libeToken.module --target /etc/pkcs11/modules/
+      # - ln -s ${FLATPAK_DEST}/libeToken.module /etc/pkcs11/modules/libeToken.module
+      # - certutil -d ~/.pki/nssdb -L
+      # - modutil -dbdir sql:~/.pki/nssdb/ -add "eToken" -libfile ${prepend-ld-library-path}/libeToken.so -force
+    cleanup:
+      - temp/
+      - usr/
+      - etc/
