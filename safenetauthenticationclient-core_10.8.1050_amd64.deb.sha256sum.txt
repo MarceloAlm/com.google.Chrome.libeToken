@@ -1,0 +1,1 @@
+6479aff198213f11294e104a01e4fc78bbc59e04d57763f3d46000bb56089429  safenetauthenticationclient-core_10.8.1050_amd64.deb

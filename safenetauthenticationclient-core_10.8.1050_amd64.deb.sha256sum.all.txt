@@ -1,0 +1,14 @@
+02032dc0d19cf1ee5a1da9505aee87caaa9be94fb81406efc735e210a2ad1b2f  ./usr/bin/SACSrv
+432a530c0badd97c9c3f736988014e6bd3b2c4b0869a2d86c0a9e10210ccae97  ./usr/lib/libSACLog.so.10.8.1050
+484a8db9265ea2ec4a0861872dd67e3e8e837c5d74a77195cabba5bd2ad79dae  ./usr/lib/libeTokenHID.so.10.8.1050
+f55b416bc99f00d1efada168bd5efc207e6c98a8373bcf3251dab12e0a503456  ./usr/lib/libIDClassicSISTokenEngine.so.10.8.1050
+ed0148e42a61e98c494f97cf34fb3f485ab7e7791faba7711edd0b7c18c98f85  ./usr/lib/libeTPKCS15.so.10.8.1050
+707e4f22656b6abd37fce7a17ef4af056ae6fec3054caf9f48e85d1a9b53ebe1  ./usr/lib/libIDPrimeTokenEngine.so.10.8.1050
+d3cd8de539feaf39f27e239fce1ffdee8f6b3d7a5d463e4a5104a791de999cec  ./usr/lib/libIDPrimeSISTokenEngine.so.10.8.1050
+54388990e7013b964363c662f2da0b18a7881529ff458686c1b69c27a37fd892  ./usr/lib/libIDPrimePKCS11.so.10.8.1050
+13576c7c1ddb0fc2d63636fc736689e95c49fc3fa6ab087d5cde4edd0483767b  ./usr/lib/libeToken.so.10.8.1050
+d2dcc7806c6c122018740c19300eeca4713bb8306382d7cdcb04dda3041e162b  ./usr/share/doc/safenetauthenticationclient-core/changelog.gz
+9fbd94ea43d446dc0bccbd9ffb37ea7c5d8204b9f03a468eccd60f5c97fe26d1  ./usr/share/doc/safenetauthenticationclient-core/copyright
+f4f5eadbf3f6daf4f88867f4bcd63f4de699d73ba56e49bf4cd7812348ae3332  ./etc/eToken.common.conf
+e818059f7a1a64c84ac41a87f0c238a368062b2336c326365efa95248a871451  ./etc/init.d/safenetauthenticationclient-core
+796f2113d4238c34db321ed6640a8d40aa649f30cd4f7dd3ad1b4d86583a1f80  ./etc/eToken.conf

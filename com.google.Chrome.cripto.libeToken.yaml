@@ -1,0 +1,62 @@
+id: com.google.Chrome.cripto.libeToken
+branch: '1.0'
+runtime: com.google.Chrome
+# runtime-version: 'stable'
+sdk: org.freedesktop.Sdk//24.08
+build-extension: true
+separate-locales: false
+build-options:
+  prefix: /app/cripto/libeToken
+  prepend-ld-library-path: /app/cripto/libeToken/lib
+tags:
+  - proprietary
+modules:
+  - name: pcsc-lite
+    config-opts:
+      - --disable-libudev
+      - --disable-libsystemd
+      - --without-systemdsystemunitdir
+      - --disable-serial
+      - --disable-usb
+      - --disable-documentation
+      - --disable-polkit
+    cleanup:
+      - '/include'
+      - '/bin/pcsc-spy'
+      - '/lib/libpcscspy*'
+      - '/lib/pkg-config'
+      - '/share/doc'
+      - '/share/man'
+    post-install:
+      - rm ${FLATPAK_DEST}/sbin/pcscd
+      - rmdir ${FLATPAK_DEST}/sbin || true
+    sources:
+      - type: archive
+        url: https://pcsclite.apdu.fr/files/pcsc-lite-2.3.0.tar.xz
+        sha256: 1acca22d2891d43ffe6d782740d32e78150d4fcc99e8a3cc763abaf546060d3d
+  
+  - name: libeToken
+    sources:
+      - type: file
+        path: safenetauthenticationclient-core_10.8.1050_amd64.deb
+        sha256: 6479aff198213f11294e104a01e4fc78bbc59e04d57763f3d46000bb56089429
+
+      - type: file
+        path: extract_lib.sh
+
+    buildsystem: simple
+    build-commands:
+      - ./extract_lib.sh
+
+      - mkdir -p ${FLATPAK_DEST}/bin
+      - install -Dm755 /usr/bin/modutil ${FLATPAK_DEST}/bin/modutil
+
+      - mkdir -p ${FLATPAK_DEST}/modules
+      - echo "module:${FLATPAK_DEST}/lib/pkcs11/libeToken.so" > ${FLATPAK_DEST}/modules/libeToken.module
+
+      # - mkdir -p ${FLATPAK_DEST}/.pki/nssdb
+      # - modutil -dbdir sql:${FLATPAK_DEST}/.pki/nssdb -create -force
+      # - modutil -dbdir sql:${FLATPAK_DEST}/.pki/nssdb -add "eToken" -libfile ${FLATPAK_DEST}/lib/libeToken.so -force
+    cleanup:
+      - safenetauthenticationclient-core_10.8.1050_amd64.deb
+      - extract_lib.sh
