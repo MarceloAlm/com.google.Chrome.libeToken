@@ -1,5 +1,5 @@
 id: com.google.Chrome.cripto.libeToken
-branch: '1.0'
+branch: '0.1.0'
 runtime: com.google.Chrome
 # runtime-version: 'stable'
 sdk: org.freedesktop.Sdk//24.08
@@ -10,6 +10,15 @@ build-options:
   prepend-ld-library-path: /app/cripto/libeToken/lib
 tags:
   - proprietary
+
+app-extensions:
+  com.google.Chrome: 
+    description: >
+      This extension provides support for the Safenet eToken cryptographic token in Google Chrome. It includes the necessary libraries for communication with the token and its dependencies.
+    documentation: >
+      To use this extension, ensure that the Google Chrome Flatpak is installed and that you have a compatible token. The tokens will be loaded by the p11-kit-proxy.so library. In case of issues, verify that the pcscd service is running on the host system (recommended version 2.3.0).
+    version: '0.1.0' 
+  
 modules:
   - name: pcsc-lite
     config-opts:
@@ -48,15 +57,6 @@ modules:
     build-commands:
       - ./extract_lib.sh
 
-      - mkdir -p ${FLATPAK_DEST}/bin
-      - install -Dm755 /usr/bin/modutil ${FLATPAK_DEST}/bin/modutil
-
-      - mkdir -p ${FLATPAK_DEST}/modules
-      - echo "module:${FLATPAK_DEST}/lib/pkcs11/libeToken.so" > ${FLATPAK_DEST}/modules/libeToken.module
-
-      # - mkdir -p ${FLATPAK_DEST}/.pki/nssdb
-      # - modutil -dbdir sql:${FLATPAK_DEST}/.pki/nssdb -create -force
-      # - modutil -dbdir sql:${FLATPAK_DEST}/.pki/nssdb -add "eToken" -libfile ${FLATPAK_DEST}/lib/libeToken.so -force
     cleanup:
       - safenetauthenticationclient-core_10.8.1050_amd64.deb
       - extract_lib.sh
