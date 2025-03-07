@@ -1,52 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<style type="text/css">
-		pre { background: transparent }
-		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
-		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
-		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
-		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
-		h1.western { font-family: "Liberation Serif", serif; font-size: 24pt; font-weight: bold }
-		h1.cjk { font-family: "NSimSun"; font-size: 24pt; font-weight: bold }
-		h1.ctl { font-size: 24pt; font-family: "Arial Unicode MS"; font-weight: bold }
-		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
-		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; font-weight: bold }
-		h2.cjk { font-family: "NSimSun"; font-size: 18pt; font-weight: bold }
-		h2.ctl { font-size: 18pt; font-family: "Arial Unicode MS"; font-weight: bold }
-	</style>
-</head>
-<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><h1 class="western">
-com.google.Chrome.cripto.eToken</h1>
-<p>This extension provides support for the Safenet eToken
-cryptographic token in Google Chrome. It includes the necessary
-libraries for communication with the token and its dependencies.</p>
-<p>To use this extension, ensure that the Google Chrome Flatpak is
-installed and that you have a compatible token. The tokens will be
-loaded by the p11-kit-proxy.so library. In case of issues, verify
-that the pcscd service is running on the host system (recommended
-version 2.3.0).</p>
-<h2 class="western">sha256sums</h2>
-<p><font face="Liberation Mono, monospace">13576c7c1ddb0fc2d63636fc736689e95c49fc3fa6ab087d5cde4edd0483767b
-lib/libeToken.so.10.8.1050<br/>
-6479aff198213f11294e104a01e4fc78bbc59e04d57763f3d46000bb56089429
-safenetauthenticationclient-core_10.8.1050_amd64.deb<br/>
-0583c3e5478a5251803af16f0bbd7d2a4e48d20188deb9dc6178456ec8d20316
-GlobalSign-SAC-Ubuntu-2204.zip<br/>
-7e5fd50d913fce9c9daeeff54201ee341b93da768576a09020cddbdba3f040bc
-Linux_SAC_10_8_R1_GA.zip</font></p>
-<h2 class="western">References</h2>
-<p><a href="https://knowledge.digicert.com/general-information/how-to-download-safenet-authentication-client">https://knowledge.digicert.com/general-information/how-to-download-safenet-authentication-client</a><br/>
-https://www.digicert.com/StaticFiles/Linux_SAC_10_8_R1_GA.zip<br/>
-<br/>
-<a href="https://support.globalsign.com/code-signing/safenet-drivers">https://support.globalsign.com/code-signing/safenet-drivers</a><br/>
-https://www.globalsign.com/en/safenet-drivers/USB/10.8/GlobalSign-SAC-Ubuntu-2204.zip</p>
-<h2 class="western">Licensing</h2>
-<p>From SAC 10.8 release onwards, no license is required for SAC on
-Linux.</p>
-<h2 class="western">Copyright</h2>
-<pre class="western">THALES SOFTWARE LICENSE TERMS
+THALES SOFTWARE LICENSE TERMS
 SafeNet Authentication Client
 Legal notice:
 Thales software is not sold; rather, copies of Thales software are licensed all the way through the distribution channel to the end user. 
@@ -58,15 +10,15 @@ Please be careful to read the agreement for the software you want to use.
 LICENSE AGREEMENT
 IMPORTANT INFORMATION - PLEASE READ THIS AGREEMENT CAREFULLY BEFORE OPENING THE PACKAGE AND/OR USING THE CONTENTS THEREOF AND/OR 
 BEFORE DOWNLOADING OR INSTALLING THE SOFTWARE PROGRAM. ALL ORDERS FOR AND USE OF SOFTWARE SUPPLIED BY Thales DIS CPL USA, Inc. 
-(or any of its affiliates - either of them referred to as &quot;THALES&quot;) ARE AND SHALL BE, SUBJECT TO THE TERMS AND CONDITIONS SET FORTH IN THIS AGREEMENT. 
+(or any of its affiliates - either of them referred to as "THALES") ARE AND SHALL BE, SUBJECT TO THE TERMS AND CONDITIONS SET FORTH IN THIS AGREEMENT. 
 BY OPENING THE PACKAGE CONTAINING THE PRODUCTS AND/OR BY DOWNLOADING THE SOFTWARE (as defined hereunder) AND/OR BY INSTALLING THE SOFTWARE 
 ON YOUR COMPUTER AND/OR BY USING THE PRODUCT, YOU ARE ACCEPTING THIS AGREEMENT AND AGREEING TO BE BOUND BY ITS TERMS AND CONDITIONS.
 
 1.  Ownership.  
 The object code version of the software component of SafeNet Authentication Client, including any revisions, corrections, modifications, enhancements, 
-updates and/or upgrades thereto about to be installed by you (hereinafter in whole or any part thereof defined as: &quot;Software&quot;), and the related the materials 
+updates and/or upgrades thereto about to be installed by you (hereinafter in whole or any part thereof defined as: "Software"), and the related the materials 
 and documents pertaining to the Software which may include, without limitation, user guides, manuals, and any other written material provided by Thales 
-(the &quot;Documentation''), ARE NOT FOR SALE and are and shall remain Thales's sole property.  All intellectual property rights (including, without limitation, 
+(the "Documentation''), ARE NOT FOR SALE and are and shall remain Thales's sole property.  All intellectual property rights (including, without limitation, 
 copyrights, trade secrets, trademarks, etc.) evidenced by or embodied in and/or attached/connected/related to the Software, in the form of object code only, 
 and the Documentation (collectively the ''Licensed Product''), are and shall be owned solely by Thales. 
 This License Agreement does not convey to you an interest in or to the Licensed Product, but only a limited right of use revocable in accordance with the terms 
@@ -76,10 +28,10 @@ the United States and other countries, and by international treaty provisions.
 
 2.  Non Exclusive License.
 
-Subject to payment of applicable fees, Thales hereby grants to you, and you accept, a personal, nonexclusive and fully revocable limited license (the &quot;License&quot;) 
+Subject to payment of applicable fees, Thales hereby grants to you, and you accept, a personal, nonexclusive and fully revocable limited license (the "License") 
 to use the Software, in executable form only, as described in the Documentation and only according to the terms of this License Agreement to:  (i) install 
 the Software and use it on computers as described in Thales's related Documentation; and (ii) merge and link the Software into your computer programs for 
-the sole purpose described in the Documentation provided by Thales (the &quot;Designated Uses&quot;).  Licensee shall use the Licensed Products only for the Designated 
+the sole purpose described in the Documentation provided by Thales (the "Designated Uses").  Licensee shall use the Licensed Products only for the Designated 
 Uses permitted by this License, as specified above, and only during the term of this License Agreement. Licensee shall not use the Licensed Products for any 
 other purpose of any kind or nature whatsoever.
 
@@ -165,7 +117,7 @@ the termination of this License Agreement.
 
 12. Special Procedure for U.S. Government Sales. 
 The Licensed Product: (i) was developed exclusively at private expense, (ii) is a trade secret of Thales for all purposes of the Freedom of 
-Information Act or its successor or any other disclosure statute, regulation or provision, (iii) is &quot;commercial computer software&quot; subject to 
+Information Act or its successor or any other disclosure statute, regulation or provision, (iii) is "commercial computer software" subject to 
 limited utilization (Restricted Rights), and (iv) including all copies of the Licensed Product, in all respects is and shall remain proprietary 
 to Thales or its licensors. Use, duplication or disclosure by the U.S. Government or any person or entity acting on its behalf is subject to 
 Restricted Rights and all applicable restrictions for software developed exclusively at private expense as set forth in:  (i) for the DoD, 
@@ -178,7 +130,7 @@ is Thales DIS CPL USA, Inc. - Corporate Headquarters, 4690 Millennium Drive, Bel
 
 13.  Open Source Software Components and Third Party Software.
 
- The Licensed Product is distributed with open source software components (&quot;Open Source Software Components&quot;) and other Third Party Software (Third Party Software), 
+ The Licensed Product is distributed with open source software components ("Open Source Software Components") and other Third Party Software (Third Party Software), 
 which are ONLY subject to the license agreements referenced herein (which also contain limited warranties and liabilities).  ONLY THOSE TERMS AND CONDITIONS SPECIFIED 
 FOR EACH SPECIFIC OPEN SOURCE SOFTWARE COMPONENT OR THIRD PARTY SOFTWARE SHALL BE APPLICABLE TO SUCH COMPONENT.  Each Open Source Software Component or 
 Third Party Software is the copyright of its respective copyright owner as indicated in the applicable license, installation, readme and/or help files for such 
@@ -202,9 +154,9 @@ and each party irrevocable submits to the specified jurisdiction.
 	Forum for Disputes: 	Courts of London
 	Israel
 	Thales Contracting Entity:	THALES DIS ISREAL LTD
-	Governing Law: 	Laws of England &amp; Wales
+	Governing Law: 	Laws of England & Wales
 	Forum for Disputes: 	Courts of London
-	Australia &amp; New Zealand
+	Australia & New Zealand
 	Thales Contracting Entity:	THALES DIS CPL AUSTRALIA PTY LTD
 	Governing Law: 	Laws of New South Wales
 	Forum for Disputes: 	Courts in Sydney, Australia
@@ -228,7 +180,7 @@ and each party irrevocable submits to the specified jurisdiction.
 	Thales Contracting Entity:	THALES DIS CPL CANADA, INC.
 	Governing Law: 	Laws of the Province of Ontario
 	Forum for Disputes: 	Courts of the Province of Ontario
-	Mexico &amp; Rest of the LATAM countries (except as noted)
+	Mexico & Rest of the LATAM countries (except as noted)
 	Thales Contracting Entity:	THALES DIS MEXICO SA DE CV
 	Governing Law: 	Laws of Mexico
 	Forum for Disputes: 	Courts in Mexico City
@@ -269,8 +221,8 @@ IV.	The origin of this software must not be misrepresented; you must not claim t
 the product documentation would be appreciated but is not required.
 V.	Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
 VI.	This notice may not be removed or altered from any source distribution.
-a.	Jean-loup Gailly jloup@gzip.org &lt;mailto:jloup@gzip.org&gt; 
-b.	Mark Adler madler@alumni.caltech.edu &lt;mailto:madler@alumni.caltech.edu&gt;
+a.	Jean-loup Gailly jloup@gzip.org <mailto:jloup@gzip.org> 
+b.	Mark Adler madler@alumni.caltech.edu <mailto:madler@alumni.caltech.edu>
 
 OpenSC component is distributed under the Lgpl v2.1  License which can be read on the free software foundation website:
 https://www.gnu.org/licenses/old-licenses/lgpl-2.1.fr.html 
@@ -279,6 +231,4 @@ GNU Lesser General Public License
 
 The Open Source Software Component (OpenSC), whose PKCS#15 functionality is utilized within SafeNet's PKCS#11 and SafeNet SIS MD products, is used and distributed under the GNU Lesser General Public License 2.1 i.e. LGPL-2.1, which can be read on the open source foundation website:
 https://opensource.org/licenses/LGPL-2.1
-</pre>
-</body>
-</html>
+

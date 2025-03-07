@@ -13,14 +13,25 @@ tags:
 
 modules:
   - name: eToken
+    buildsystem: simple
+    build-commands:
+      - mkdir -p ${FLATPAK_DEST}/lib/pkcs11
+      - ln -sf ${FLATPAK_DEST}/extra/lib/libeToken.so.10.8.1050 ${FLATPAK_DEST}/lib/pkcs11/libeToken.so
+      - mkdir -p ${FLATPAK_DEST}/modules
+      - echo "module:${FLATPAK_DEST}/lib/pkcs11/libeToken.so" > ${FLATPAK_DEST}/modules/libeToken.module
+      - install -Dm755 apply_extra ${FLATPAK_DEST}/bin/apply_extra
     sources:
-      - type: file
-        path: safenetauthenticationclient-core_10.8.1050_amd64.deb
-        sha256: 6479aff198213f11294e104a01e4fc78bbc59e04d57763f3d46000bb56089429
-
-      - type: file
-        path: extract_lib.sh
-
+      - type: extra-data
+        url: https://www.globalsign.com/en/safenet-drivers/USB/10.8/GlobalSign-SAC-Ubuntu-2204.zip
+        sha256: 0583c3e5478a5251803af16f0bbd7d2a4e48d20188deb9dc6178456ec8d20316
+        filename: safenet.zip
+        size: 10257297
+        only-arches:
+          - x86_64
+      - type: script
+        dest-filename: apply_extra
+        commands:
+          - unzip -p safenet.zip Ubuntu-2204/safenetauthenticationclient_10.8.1050_amd64.deb | bsdtar -Oxf - data.tar.gz | bsdtar -xf - --strip-components=2 ./usr/lib/libeToken.so.10.8.1050
     modules:
       - name: pcsc-lite
         config-opts:
@@ -33,21 +44,13 @@ modules:
           - --disable-polkit
         cleanup:
           - '/include'
-          - '/bin/pcsc-spy'
           - '/lib/libpcscspy*'
+          - '/lib/pkgconfig'
           - '/share'
-        post-install:
-          - rm ${FLATPAK_DEST}/sbin/pcscd
-          - rmdir ${FLATPAK_DEST}/sbin || true
-          - rm -fr ${FLATPAK_DEST}/lib/pkgconfig
+          - '/bin'
+          - '/sbin'
+
         sources:
           - type: archive
             url: https://pcsclite.apdu.fr/files/pcsc-lite-2.3.0.tar.xz
             sha256: 1acca22d2891d43ffe6d782740d32e78150d4fcc99e8a3cc763abaf546060d3d
-
-    buildsystem: simple
-    build-commands:
-      - ./extract_lib.sh
-    cleanup:
-      - safenetauthenticationclient-core_10.8.1050_amd64.deb
-      - extract_lib.sh
