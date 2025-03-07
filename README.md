@@ -1,52 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<style type="text/css">
-		pre { background: transparent }
-		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
-		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
-		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
-		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
-		h1.western { font-family: "Liberation Serif", serif; font-size: 24pt; font-weight: bold }
-		h1.cjk { font-family: "NSimSun"; font-size: 24pt; font-weight: bold }
-		h1.ctl { font-size: 24pt; font-family: "Arial Unicode MS"; font-weight: bold }
-		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
-		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; font-weight: bold }
-		h2.cjk { font-family: "NSimSun"; font-size: 18pt; font-weight: bold }
-		h2.ctl { font-size: 18pt; font-family: "Arial Unicode MS"; font-weight: bold }
-	</style>
-</head>
-<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><h1 class="western">
-com.google.Chrome.cripto.eToken</h1>
+<h1>com.google.Chrome.cripto.eToken</h1>
 <p>This extension provides support for the Safenet eToken
 cryptographic token in Google Chrome. It includes the necessary
 libraries for communication with the token and its dependencies.</p>
 <p>To use this extension, ensure that the Google Chrome Flatpak is
 installed and that you have a compatible token. The tokens will be
 loaded by the p11-kit-proxy.so library. In case of issues, verify
-that the pcscd service is running on the host system (recommended
-version 2.3.0).</p>
-<h2 class="western">sha256sums</h2>
-<p><font face="Liberation Mono, monospace">13576c7c1ddb0fc2d63636fc736689e95c49fc3fa6ab087d5cde4edd0483767b
-lib/libeToken.so.10.8.1050<br/>
-6479aff198213f11294e104a01e4fc78bbc59e04d57763f3d46000bb56089429
-safenetauthenticationclient-core_10.8.1050_amd64.deb<br/>
-0583c3e5478a5251803af16f0bbd7d2a4e48d20188deb9dc6178456ec8d20316
-GlobalSign-SAC-Ubuntu-2204.zip<br/>
-7e5fd50d913fce9c9daeeff54201ee341b93da768576a09020cddbdba3f040bc
-Linux_SAC_10_8_R1_GA.zip</font></p>
-<h2 class="western">References</h2>
-<p><a href="https://knowledge.digicert.com/general-information/how-to-download-safenet-authentication-client">https://knowledge.digicert.com/general-information/how-to-download-safenet-authentication-client</a><br/>
+that the pcscd service is running on the host system (recommended version 2.3.0).</p>
+<h2>sha256sums</h2>
+<p>
+13576c7c1ddb0fc2d63636fc736689e95c49fc3fa6ab087d5cde4edd0483767b lib/libeToken.so.10.8.1050 <br/>
+0583c3e5478a5251803af16f0bbd7d2a4e48d20188deb9dc6178456ec8d20316 GlobalSign-SAC-Ubuntu-2204.zip <br/>
+7e5fd50d913fce9c9daeeff54201ee341b93da768576a09020cddbdba3f040bc Linux_SAC_10_8_R1_GA.zip </br>
+</p>
+<h2>References</h2>
+<p>
+<a href="https://knowledge.digicert.com/general-information/how-to-download-safenet-authentication-client">https://knowledge.digicert.com/general-information/how-to-download-safenet-authentication-client</a><br/>
 https://www.digicert.com/StaticFiles/Linux_SAC_10_8_R1_GA.zip<br/>
 <br/>
 <a href="https://support.globalsign.com/code-signing/safenet-drivers">https://support.globalsign.com/code-signing/safenet-drivers</a><br/>
 https://www.globalsign.com/en/safenet-drivers/USB/10.8/GlobalSign-SAC-Ubuntu-2204.zip</p>
-<h2 class="western">Licensing</h2>
-<p>From SAC 10.8 release onwards, no license is required for SAC on
-Linux.</p>
-<h2 class="western">Copyright</h2>
-<pre class="western">THALES SOFTWARE LICENSE TERMS
+<h2 >Licensing</h2>
+<p>From SAC 10.8 release onwards, no license is required for SAC on Linux.</p>
+<h2 >Copyright</h2>
+<pre >THALES SOFTWARE LICENSE TERMS
 SafeNet Authentication Client
 Legal notice:
 Thales software is not sold; rather, copies of Thales software are licensed all the way through the distribution channel to the end user. 
@@ -280,5 +256,3 @@ GNU Lesser General Public License
 The Open Source Software Component (OpenSC), whose PKCS#15 functionality is utilized within SafeNet's PKCS#11 and SafeNet SIS MD products, is used and distributed under the GNU Lesser General Public License 2.1 i.e. LGPL-2.1, which can be read on the open source foundation website:
 https://opensource.org/licenses/LGPL-2.1
 </pre>
-</body>
-</html>
