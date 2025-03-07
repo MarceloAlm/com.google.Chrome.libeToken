@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="addon">
-  <id>com.google.Chrome.cripto.eToken</id>
+  <id>com.google.Chrome.pki.eToken</id>
   
-  <name>com.google.Chrome.cripto.eToken</name>
+  <name>com.google.Chrome.pki.eToken</name>
   <summary>This extension provides support for the Safenet eToken cryptographic token in Google Chrome.</summary>
   
   <metadata_license>CC0-1.0</metadata_license>

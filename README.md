@@ -1,4 +1,4 @@
-<h1>com.google.Chrome.cripto.eToken</h1>
+<h1>com.google.Chrome.pki.eToken</h1>
 <p>This extension provides support for the Safenet eToken
 cryptographic token in Google Chrome. It includes the necessary
 libraries for communication with the token and its dependencies.</p>

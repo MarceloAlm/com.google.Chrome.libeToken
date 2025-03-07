@@ -1,4 +1,4 @@
-id: com.google.Chrome.cripto.eToken
+id: com.google.Chrome.pki.eToken
 branch: '0.1.0'
 runtime: com.google.Chrome
 runtime-version: 'test'
@@ -6,8 +6,8 @@ sdk: org.freedesktop.Sdk//24.08
 build-extension: true
 separate-locales: false
 build-options:
-  prefix: /app/cripto/eToken
-  prepend-ld-library-path: /app/cripto/eToken/lib
+  prefix: /app/pki/eToken
+  prepend-ld-library-path: /app/pki/eToken/lib
 tags:
   - proprietary
 
