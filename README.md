@@ -1,28 +1,62 @@
-<h1>com.google.Chrome.pki.eToken</h1>
-<p>This extension provides support for the Safenet eToken
+# com.google.Chrome.pki.eToken
+
+This extension provides support for the Safenet eToken
 cryptographic token in Google Chrome. It includes the necessary
-libraries for communication with the token and its dependencies.</p>
-<p>To use this extension, ensure that the Google Chrome Flatpak is
+libraries for communication with the token and its dependencies.
+
+To use this extension, ensure that the Google Chrome Flatpak is
 installed and that you have a compatible token. The tokens will be
 loaded by the p11-kit-proxy.so library. In case of issues, verify
-that the pcscd service is running on the host system (recommended version 2.3.0).</p>
-<h2>sha256sums</h2>
-<p>
-13576c7c1ddb0fc2d63636fc736689e95c49fc3fa6ab087d5cde4edd0483767b lib/libeToken.so.10.8.1050 <br/>
-0583c3e5478a5251803af16f0bbd7d2a4e48d20188deb9dc6178456ec8d20316 GlobalSign-SAC-Ubuntu-2204.zip <br/>
-7e5fd50d913fce9c9daeeff54201ee341b93da768576a09020cddbdba3f040bc Linux_SAC_10_8_R1_GA.zip </br>
-</p>
-<h2>References</h2>
-<p>
-<a href="https://knowledge.digicert.com/general-information/how-to-download-safenet-authentication-client">https://knowledge.digicert.com/general-information/how-to-download-safenet-authentication-client</a><br/>
-https://www.digicert.com/StaticFiles/Linux_SAC_10_8_R1_GA.zip<br/>
-<br/>
-<a href="https://support.globalsign.com/code-signing/safenet-drivers">https://support.globalsign.com/code-signing/safenet-drivers</a><br/>
-https://www.globalsign.com/en/safenet-drivers/USB/10.8/GlobalSign-SAC-Ubuntu-2204.zip</p>
-<h2 >Licensing</h2>
-<p>From SAC 10.8 release onwards, no license is required for SAC on Linux.</p>
-<h2 >Copyright</h2>
-<pre >THALES SOFTWARE LICENSE TERMS
+that the pcscd service is running on the host system (recommended version 2.3.0).
+
+
+## Instalation (testing branch)
+Install the pre-requisites and the compatible testing branch of com.google.Chrome (https://github.com/flathub/com.google.Chrome/pull/378):
+
+``` bash
+flatpak install --user -y org.flatpak.Builder
+flatpak install --user https://dl.flathub.org/build-repo/168688/com.google.Chrome.flatpakref
+```
+Clone the repository:
+``` bash
+git clone https://github.com/MarceloAlm/com.google.Chrome.libeToken.git
+cd com.google.Chrome.libeToken/
+```
+
+Build:
+``` bash
+flatpak run org.flatpak.Builder --force-clean --sandbox --user --install-deps-from=flathub --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=./local-repo /tmp/_build com.google.Chrome.pki.eToken.yaml
+```
+
+``` bash
+flatpak remote-add --user --no-gpg-verify local-repo file://$(pwd)/.local-repo
+```
+
+``` bash
+flatpak install --user -y local-repo com.google.Chrome.pki.eToken
+```
+
+sha256sums
+----------
+```
+13576c7c1ddb0fc2d63636fc736689e95c49fc3fa6ab087d5cde4edd0483767b lib/libeToken.so.10.8.1050
+0583c3e5478a5251803af16f0bbd7d2a4e48d20188deb9dc6178456ec8d20316 GlobalSign-SAC-Ubuntu-2204.zip
+7e5fd50d913fce9c9daeeff54201ee341b93da768576a09020cddbdba3f040bc Linux_SAC_10_8_R1_GA.zip
+```
+
+## References
+### https://knowledge.digicert.com/general-information/how-to-download-safenet-authentication-client
+https://www.digicert.com/StaticFiles/Linux_SAC_10_8_R1_GA.zip
+
+### https://support.globalsign.com/code-signing/safenet-drivers
+https://www.globalsign.com/en/safenet-drivers/USB/10.8/GlobalSign-SAC-Ubuntu-2204.zip
+
+## Licensing
+From SAC 10.8 release onwards, no license is required for SAC on Linux.
+
+# Copyright
+```
+THALES SOFTWARE LICENSE TERMS
 SafeNet Authentication Client
 Legal notice:
 Thales software is not sold; rather, copies of Thales software are licensed all the way through the distribution channel to the end user. 
@@ -255,4 +289,4 @@ GNU Lesser General Public License
 
 The Open Source Software Component (OpenSC), whose PKCS#15 functionality is utilized within SafeNet's PKCS#11 and SafeNet SIS MD products, is used and distributed under the GNU Lesser General Public License 2.1 i.e. LGPL-2.1, which can be read on the open source foundation website:
 https://opensource.org/licenses/LGPL-2.1
-</pre>
+```
