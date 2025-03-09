@@ -25,7 +25,7 @@ cd com.google.Chrome.libeToken/
 
 Build:
 ``` bash
-flatpak run org.flatpak.Builder --force-clean --sandbox --user --install-deps-from=flathub --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=./local-repo /tmp/_build com.google.Chrome.pki.eToken.yaml
+flatpak run org.flatpak.Builder --force-clean --sandbox --user --install-deps-from=flathub --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=.local-repo _build com.google.Chrome.pki.eToken.yaml
 ```
 
 ``` bash
